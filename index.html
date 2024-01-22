@@ -12,6 +12,11 @@ body {
     font-size: 30px;
 }
 
+input[type="radio"],input[type="checkbox"]  {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
+}
 
 input[type=text], select, textarea{
   width: 100%;
@@ -30,7 +35,7 @@ input[type=number], select, textarea{
   resize: vertical;
 }
 
-input[type=text],input[type=number], input[type=date], input[type=time], textarea{
+input[type=text],input[type=number], input[type=date], input[type=time], input[type=submit], textarea{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   font-size: 24px;
@@ -196,9 +201,10 @@ input[type=submit] {
   <input type="submit" value="Generate text" onclick="myFunction()" >
   <br>
   <br>
-  <br>
-  <br>
   <textarea id="summary" name="summary" placeholder="สรุป" style="height:500px"></textarea>
+  <br><br>
+  <input type="submit" value="Copy text" onclick="copy()" >
+
 <!-- </form>  -->
 
 </body>
@@ -277,6 +283,12 @@ function myFunction() {
     "- " + document.getElementById("other_rx").value + "\n";
 
   document.getElementById("summary").value = myText
+  document.getElementById("summary").select();
+  document.execCommand('copy');
+}
+function copy() {
+  document.getElementById("summary").select();
+  document.execCommand('copy');
 }
 </script>
 
