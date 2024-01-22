@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sarabun' rel='stylesheet'>
+
+<style>
+/* Style inputs, select elements and textareas */
+body {
+/*    font-family: 'Sarabun';font-size: 18px;*/
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    font-size: 30px;
+}
+
+input[type="radio"],input[type="checkbox"]  {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
+}
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+input[type=number], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type=text],input[type=number], input[type=date], input[type=time],select, input[type=submit],input[type=home], textarea{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 24px;
+}
+
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+heading {
+  background-color: #37742A;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  float: left;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #37742A; /*04AA6D*/;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<heading><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half"
+  viewbox="0 0 16 16">
+  <path
+    d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
+</svg><b> KCMH NEUROLOGY STROKE FORM </b></heading> <br><br>
+<a href="index.html"> <input style="background-color: #8C8A8B;" type="submit" value="HOME" ></a>
+
+<br>
+<br>
+<!-- <form action="/action_page.php"> -->
+  <label for="date"><b>Date & Time:</b></label><br>
+  <input type="date" id="thisdate" name="thisdate" /> <br>
+  <input type="time" id="thistime" name="thistime" /> <br><br>
+  <label for="fname"><b>initials:</b></label><br>
+  <input type="text" id="fname" name="fname" placeholder="XX"><br>
+  <label for="age"><b>Age:</b> (between 1 and 120)</label><br>
+  <input type="number" id="age" name="Age" min="1" max="120" placeholder = '0'><br>
+  <label for="hn"><b>HN:</b></label><br>
+  <input type="number" id="hn" name="hn" placeholder="123456"><br>
+  <label for="onset"><b>Onset:</b></label><br>
+  <input type="text" id="onset" name="onset" placeholder="... ชั่วโมง"><br>
+  <label for="cc"><b>CC:</b></label><br>
+  <input type="text" id="cc" name="cc" placeholder="อ่อนแรง"><br>
+  <label for="ct"><b>CT findings:</b></label><br>
+  <input type="text" id="ct" name="ct" placeholder="hypodensity ...">
+  <br><br><br>
+  <!-- <div> -->
+  <label for="Dx"><b>🔥 DIAGNOSIS:</b></label><br>
+  <textarea id="diag" name="diag" placeholder="โปรดระบุ.." style="height:70px"></textarea>
+  <!-- </div> -->
+
+  <br>
+  <br>
+  <!-- <button onclick="myFunction()" type="submit">Submit</button> -->
+  <input type="submit" value="Generate text" onclick="myFunction()" >
+  <br>
+  <br>
+  <textarea id="summary" name="summary" placeholder="สรุป" style="height:500px"></textarea>
+  <br><br>
+  <input type="submit" value="Copy text" onclick="copy()" >
+
+<!-- </form>  -->
+
+</body>
+
+<script>
+// console.log('dfdsf')
+function myFunction() {
+  var diag_text = document.querySelector('input[name="diagnosis"]:checked'); 
+  
+  const whichDate = new Date(document.getElementById("thisdate").value);
+  const whichTime = document.getElementById("thistime").value;
+
+  if (isNaN(whichDate.getDate()))
+    myText = Date(document.getElementById("thisdate").value) + "\n";
+  else
+    myText = whichDate.toDateString() + "\n";
+
+
+  if (isNaN(whichTime))
+    myText = myText + "เวลา : " + whichTime.toString() + "\n";
+
+  myText = myText +  
+  "----------------" + "\n" + 
+  "ชื่อ  : " + document.getElementById("fname").value + "\n" + 
+  "อายุ : " + document.getElementById("age").value + " ปี \n" + 
+  "HN  : " + document.getElementById("hn").value + "\n" + 
+  "----------------" + "\n" + 
+  "onset : " + document.getElementById("onset").value + "\n" + 
+  "CC : " + document.getElementById("cc").value + "\n" + 
+  "CT findings : " + document.getElementById("ct").value + "\n" + 
+  "----------------" + "\n" + 
+  "** DIAGNOSIS **" + "\n" + 
+  "วินิจฉัย : " + document.getElementById("diag").value + "\n";
+
+  document.getElementById("summary").value = myText
+  // document.getElementById("summary").select();
+  // document.execCommand('copy');
+}
+function copy() {
+  document.getElementById("summary").select();
+  document.execCommand('copy');
+}
+</script>
+
+
+</html>
