@@ -10,6 +10,7 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     font-size: 30px;
+
 }
 
 input[type="radio"],input[type="checkbox"]  {
@@ -19,7 +20,7 @@ input[type="radio"],input[type="checkbox"]  {
 }
 
 input[type=text], select, textarea{
-  width: 100%;
+  width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -27,7 +28,7 @@ input[type=text], select, textarea{
   resize: vertical;
 }
 input[type=number], select, textarea{
-  width: 100%;
+  width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -35,10 +36,14 @@ input[type=number], select, textarea{
   resize: vertical;
 }
 
-input[type=text],input[type=number], input[type=date], input[type=time],select, input[type=submit],input[type=home], textarea{
+input[type=text],input[type=number], input[type=date], input[type=radio], input[type=time], select, input[type=submit],input[type=home], textarea{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   font-size: 24px;
+  /* left margin */
+  margin-left: 10px;
+  /* left padding */
+  padding-left: 10px;
 }
 
 
@@ -46,6 +51,10 @@ input[type=text],input[type=number], input[type=date], input[type=time],select, 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
+  /* left margin */
+  margin-left: 10px;
+  /* left padding */
+  padding-left: 10px;
 }
 
 heading {
@@ -74,6 +83,7 @@ input[type=submit] {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  
 }
 
 /* Floating column for labels: 25% width */
@@ -104,11 +114,21 @@ input[type=submit] {
     margin-top: 0;
   }
 }
+.bgimg {
+/*  background-image: url('img/63b92862-1024.jpeg');*/
+  background: rgb(229,230,174);
+  background: linear-gradient(-45deg, rgba(229,230,174,1) 11%, rgba(93,209,138,1) 100%);
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
 </style>
+
+
 </head>
 
 <body>
-
+<div class="bgimg w3-display-container w3-text-white">
 <heading><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half"
   viewbox="0 0 16 16">
   <path
@@ -126,7 +146,7 @@ input[type=submit] {
   <label for="resident"><b>Residents/Fellows:</b></label><br>
   <input type="text" id="r2" name="r2" placeholder="R2/F1"> <br>
   <input type="text" id="r3" name="r3" placeholder="R3/F2"> <br><br>
-  
+
   <label for="fname"><b>You-know-who:</b></label><br>
   <input type="text" id="fname" name="fname" placeholder="XX"><br>
   <label for="age"><b>Age:</b> (between 1 and 120)</label><br>
@@ -154,7 +174,7 @@ input[type=submit] {
   <textarea id="summary" name="summary" placeholder="สรุป" style="height:500px"></textarea>
   <br><br>
   <input type="submit" value="Copy text" onclick="copy()" >
-
+  <br><br>
 <!-- </form>  -->
 
 </body>
