@@ -122,6 +122,11 @@ input[type=submit] {
   <label for="date"><b>Date & Time:</b></label><br>
   <input type="date" id="thisdate" name="thisdate" /> <br>
   <input type="time" id="thistime" name="thistime" /> <br><br>
+
+  <label for="resident"><b>Residents/Fellows:</b></label><br>
+  <input type="text" id="r2" name="r2" placeholder="R2/F1"> <br>
+  <input type="text" id="r3" name="r3" placeholder="R3/F2"> <br><br>
+  
   <label for="fname"><b>You-know-who:</b></label><br>
   <input type="text" id="fname" name="fname" placeholder="XX"><br>
   <label for="age"><b>Age:</b> (between 1 and 120)</label><br>
@@ -170,6 +175,13 @@ function myFunction() {
 
   if (isNaN(whichTime))
     myText = myText + "เวลา : " + whichTime.toString() + "\n";
+
+  if (document.getElementById("r2").value !== "")
+    myText = myText + 
+    "R2/F1 : " + document.getElementById("r2").value + "\n";
+  if (document.getElementById("r3").value !== "")
+    myText = myText + 
+    "R3/F2 : " + document.getElementById("r3").value + "\n";
 
   myText = myText +  
   "----------------" + "\n" + 

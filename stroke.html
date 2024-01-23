@@ -10,6 +10,7 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     font-size: 30px;
+
 }
 
 input[type="radio"],input[type="checkbox"]  {
@@ -19,7 +20,7 @@ input[type="radio"],input[type="checkbox"]  {
 }
 
 input[type=text], select, textarea{
-  width: 100%;
+  width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -27,7 +28,7 @@ input[type=text], select, textarea{
   resize: vertical;
 }
 input[type=number], select, textarea{
-  width: 100%;
+  width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -35,10 +36,14 @@ input[type=number], select, textarea{
   resize: vertical;
 }
 
-input[type=text],input[type=number], input[type=date], input[type=time],select, input[type=submit],input[type=home], textarea{
+input[type=text],input[type=number], input[type=date], input[type=radio], input[type=time], select, input[type=submit],input[type=home], textarea{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   font-size: 24px;
+  /* left margin */
+  margin-left: 10px;
+  /* left padding */
+  padding-left: 10px;
 }
 
 
@@ -46,6 +51,10 @@ input[type=text],input[type=number], input[type=date], input[type=time],select, 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
+  /* left margin */
+  margin-left: 10px;
+  /* left padding */
+  padding-left: 10px;
 }
 
 heading {
@@ -74,6 +83,7 @@ input[type=submit] {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  
 }
 
 /* Floating column for labels: 25% width */
@@ -104,134 +114,148 @@ input[type=submit] {
     margin-top: 0;
   }
 }
+.bgimg {
+/*  background-image: url('img/63b92862-1024.jpeg');*/
+  background: rgb(238,174,202);
+  background: linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
 </style>
 </head>
 
 <body>
+<div class="bgimg w3-display-container w3-text-white">
+  <heading>
 
-<heading><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half"
-  viewbox="0 0 16 16">
-  <path
-    d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
-</svg><b> KCMH NEUROLOGY STROKE FORM </b></heading> <br><br>
-<a href="index.html"> <input style="background-color: #8C8A8B;" type="submit" value="HOME" ></a>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half"
+    viewbox="0 0 16 16">
+    <path
+      d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
+  </svg><b> KCMH NEUROLOGY STROKE FORM </b></heading> <br><br>
 
-<br>
-<br>
-<!-- <form action="/action_page.php"> -->
-  <label for="date"><b>Date & Time:</b></label><br>
-  <input type="date" id="thisdate" name="thisdate" /> <br>
-  <input type="time" id="thistime" name="thistime" /> <br><br>
+  <a href="index.html"> <input style="background-color: #8C8A8B;" type="submit" value="HOME" ></a>
 
-  <label for="resident"><b>Residents/Fellows:</b></label><br>
-  <input type="text" id="r2" name="r2" placeholder="R2/F1"> <br>
-  <input type="text" id="r3" name="r3" placeholder="R3/F2"> <br><br>
-
-
-  <label for="fname"><b>You-know-who:</b></label><br>
-  <input type="text" id="fname" name="fname" placeholder="XX"><br>
-  <label for="age"><b>Age:</b> (between 1 and 120)</label><br>
-  <input type="number" id="age" name="Age" min="1" max="120" placeholder = '0'><br>
-  <label for="hn"><b>HN:</b></label><br>
-  <input type="number" id="hn" name="hn" placeholder="123456"><br>
-  <label for="onset"><b>Onset:</b></label><br>
-  <input type="text" id="onset" name="onset" placeholder="... ชั่วโมง"><br>
-  <label for="cc"><b>CC:</b></label><br>
-  <input type="text" id="cc" name="cc" placeholder="อ่อนแรง"><br>
-  <label for="ct"><b>CT findings:</b></label><br>
-  <input type="text" id="ct" name="ct" placeholder="hypodensity ...">
-  <br><br><br>
-  <!-- <div> -->
-    <label for="Dx"><b>🔥 DIAGNOSIS:</b></label><br>
-    <input type="radio" id="ischemicStroke" name="diagnosis" value="Ischemic stroke">
-    <label for="ischemicStroke">Ischemic stroke</label><br>
-    <input type="radio" id="CVST" name="diagnosis" value="CVST">
-    <label for="CVST">CVST</label><br>
-    <textarea id="other_dg" name="other_dg" placeholder="ข้อมูลอื่นๆ โปรดระบุ.." style="height:70px"></textarea>
-  <!-- </div> -->
-
-  <label for="TOAST"><b>TOAST classification:</b></label><br>
-  <select type="select" name="toast" id="toast" placeholder="hypodensity ...">
-    <!-- <optgroup label="Swedish Cars"> -->
-      <option value="" selected disabled hidden>Choose here</option>
-      <option value="LAA">1) large-artery atherosclerosis</option>
-      <option value="CE">2) cardioembolism</option>
-    <!-- </optgroup> -->
-    <!-- <optgroup label="German Cars"> -->
-      <option value="SVD">3) small-vessel occlusion</option>
-      <option value="Other">4) stroke of other determined etiology</option>
-      <option value="Undetermined">5) stroke of undetermined etiology</option>
-    <!-- </optgroup> -->
-  </select>
-
-  <label for="nihss"><b>NIHSS:</b> (between 0 and 42)</label><br>
-  <input type="number" id="nihss" name="nihss" min="0" max="42" placeholder = '0'>
-  <br><br><br>
-  <label for="Management"><b>👍 MANAGEMENT:</b></label>
-  <br>
-
-  <div>
-    <label for="admit"><b>Admit:</b></label><br>
-    <input type="radio" id="18A2" name="ward" value="18-A2">
-    <label for="18A2">18-A2</label><br>
-    <input type="radio" id="18A3" name="ward" value="18-A3">
-    <label for="18A3">18-A3</label><br>
-    <input type="radio" id="somewhere" name="ward" value="others" />
-    <label for="Others">Others</label><br>
-    <input type="text" id="thisward" name="somewhere" placeholder="ชื่อหอผู้ป่วย" />
-    <label for="other"> </label><br>
- 
-  </div>
-
-  <label for="Supportive Rx"><b>Supportive treatment:</b></label><br>
-  <input type="checkbox" id="IV" name="IV" value="IV hydration" checked>
-  <label for="IV"> IV hydration</label><br>
-  <input type="checkbox" id="lab" name="lab" value="Pre-admission lab investigation" checked>
-  <label for="lab"> Pre-admission lab investigation</label><br>
-
-  <label for="reperfRx"><b>Reperfusion therapy:</b></label><br>
-  <input type="checkbox" id="rtPA" name="rtPA" value="rtPA">
-  <label for="rtPA"> rtPA</label><br>
-  <input type="checkbox" id="EVT" name="EVT" value="EVT">
-  <label for="EVT"> Endovascular therapy </label><br>
-
-  <div>
-    <label for="Antiplatelet"><b>Antiplatelet:</b></label><br>
-    <input type="radio" id="ASA" name="Antiplatelet" value="ASA 300mg">
-    <label for="ASA">ASA (300mg)</label><br>
-    <input type="radio" id="CHANCE" name="Antiplatelet" value="CHANCE protocol">
-    <label for="CHANCE">CHANCE protocol</label><br>
-    <input type="radio" id="SAMPRIS" name="Antiplatelet" value="SAMPRIS protocol">
-    <label for="SAMPRIS">SAMPRIS protocol</label><br>
-  </div>
-
-  <div>
-    <label for="Anticoagulant"><b>Anticoagulant:</b></label><br>
-    <input type="radio" id="Warfarin" name="Anticoagulant" value="Warfarin">
-    <label for="Warfarin">Warfarin</label><br>
-    <input type="radio" id="dabigatran" name="Anticoagulant" value="dabigatran">
-    <label for="dabigatran">dabigatran</label><br>
-    <input type="radio" id="rivaroxaban" name="Anticoagulant" value="rivaroxaban">
-    <label for="rivaroxaban">rivaroxaban</label><br>
-    <input type="radio" id="apixaban" name="Anticoagulant" value="apixaban">
-    <label for="apixaban">apixaban</label><br>
-    <input type="radio" id="edoxaban" name="Anticoagulant" value="edoxaban">
-    <label for="edoxaban">edoxaban</label><br>
-    <textarea id="other_rx" name="other_rx" placeholder="ข้อมูลอื่นๆ โปรดระบุ.." style="height:70px"></textarea>
-  </div>
 
   <br>
   <br>
-  <!-- <button onclick="myFunction()" type="submit">Submit</button> -->
-  <input type="submit" value="Generate text" onclick="myFunction()" >
-  <br>
-  <br>
-  <textarea id="summary" name="summary" placeholder="สรุป" style="height:500px"></textarea>
-  <br><br>
-  <input type="submit" value="Copy text" onclick="copy()" >
+  <!-- <form action="/action_page.php"> -->
 
-<!-- </form>  -->
+    <label for="date"><b>Date & Time:</b></label><br>
+    <input type="date" id="thisdate" name="thisdate" /> <br>
+    <input type="time" id="thistime" name="thistime" /> <br><br>
 
+    <label for="resident"><b>Residents/Fellows:</b></label><br>
+    <input type="text" id="r2" name="r2" placeholder="R2/F1"> <br>
+    <input type="text" id="r3" name="r3" placeholder="R3/F2"> <br><br>
+
+
+    <label for="fname"><b>You-know-who:</b></label><br>
+    <input type="text" id="fname" name="fname" placeholder="XX"><br>
+    <label for="age"><b>Age:</b> (between 1 and 120)</label><br>
+    <input type="number" id="age" name="Age" min="1" max="120" placeholder = '0'><br>
+    <label for="hn"><b>HN:</b></label><br>
+    <input type="number" id="hn" name="hn" placeholder="123456"><br>
+    <label for="onset"><b>Onset:</b></label><br>
+    <input type="text" id="onset" name="onset" placeholder="... ชั่วโมง"><br>
+    <label for="cc"><b>CC:</b></label><br>
+    <input type="text" id="cc" name="cc" placeholder="อ่อนแรง"><br>
+    <label for="ct"><b>CT findings:</b></label><br>
+    <input type="text" id="ct" name="ct" placeholder="hypodensity ...">
+    <br><br><br>
+    <div>
+      <label for="Dx"><b>🔥 DIAGNOSIS:</b></label><br>
+      <input type="radio" id="ischemicStroke" name="diagnosis" value="Ischemic stroke">
+      <label for="ischemicStroke">Ischemic stroke</label><br>
+      <input type="radio" id="CVST" name="diagnosis" value="CVST">
+      <label for="CVST">CVST</label><br>
+      <textarea id="other_dg" name="other_dg" placeholder="ข้อมูลอื่นๆ โปรดระบุ.." style="height:70px"></textarea>
+    </div>
+    <div>
+      <label for="TOAST"><b>TOAST classification:</b></label><br>
+      <select type="select" name="toast" id="toast" placeholder="hypodensity ...">
+        <!-- <optgroup label="Swedish Cars"> -->
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="LAA">1) large-artery atherosclerosis</option>
+          <option value="CE">2) cardioembolism</option>
+        <!-- </optgroup> -->
+        <!-- <optgroup label="German Cars"> -->
+          <option value="SVD">3) small-vessel occlusion</option>
+          <option value="Other">4) stroke of other determined etiology</option>
+          <option value="Undetermined">5) stroke of undetermined etiology</option>
+        <!-- </optgroup> -->
+      </select>
+    </div>
+
+    <label for="nihss"><b>NIHSS:</b> (between 0 and 42)</label><br>
+    <input type="number" id="nihss" name="nihss" min="0" max="42" placeholder = '0'>
+    <br><br><br>
+    <label for="Management"><b>👍 MANAGEMENT:</b></label>
+    <br>
+
+    <div>
+      <label for="admit"><b>Admit:</b></label><br>
+      <input type="radio" id="18A2" name="ward" value="18-A2">
+      <label for="18A2">18-A2</label><br>
+      <input type="radio" id="18A3" name="ward" value="18-A3">
+      <label for="18A3">18-A3</label><br>
+      <input type="radio" id="somewhere" name="ward" value="others" />
+      <label for="Others">Others</label><br>
+      <input type="text" id="thisward" name="somewhere" placeholder="ชื่อหอผู้ป่วย" />
+      <label for="other"> </label><br>
+   
+    </div>
+
+    <label for="Supportive Rx"><b>Supportive treatment:</b></label><br>
+    <input type="checkbox" id="IV" name="IV" value="IV hydration" checked>
+    <label for="IV"> IV hydration</label><br>
+    <input type="checkbox" id="lab" name="lab" value="Pre-admission lab investigation" checked>
+    <label for="lab"> Pre-admission lab investigation</label><br>
+
+    <label for="reperfRx"><b>Reperfusion therapy:</b></label><br>
+    <input type="checkbox" id="rtPA" name="rtPA" value="rtPA">
+    <label for="rtPA"> rtPA</label><br>
+    <input type="checkbox" id="EVT" name="EVT" value="EVT">
+    <label for="EVT"> Endovascular therapy </label><br>
+
+    <div>
+      <label for="Antiplatelet"><b>Antiplatelet:</b></label><br>
+      <input type="radio" id="ASA" name="Antiplatelet" value="ASA 300mg">
+      <label for="ASA">ASA (300mg)</label><br>
+      <input type="radio" id="CHANCE" name="Antiplatelet" value="CHANCE protocol">
+      <label for="CHANCE">CHANCE protocol</label><br>
+      <input type="radio" id="SAMPRIS" name="Antiplatelet" value="SAMPRIS protocol">
+      <label for="SAMPRIS">SAMPRIS protocol</label><br>
+    </div>
+
+    <div>
+      <label for="Anticoagulant"><b>Anticoagulant:</b></label><br>
+      <input type="radio" id="Warfarin" name="Anticoagulant" value="Warfarin">
+      <label for="Warfarin">Warfarin</label><br>
+      <input type="radio" id="dabigatran" name="Anticoagulant" value="dabigatran">
+      <label for="dabigatran">dabigatran</label><br>
+      <input type="radio" id="rivaroxaban" name="Anticoagulant" value="rivaroxaban">
+      <label for="rivaroxaban">rivaroxaban</label><br>
+      <input type="radio" id="apixaban" name="Anticoagulant" value="apixaban">
+      <label for="apixaban">apixaban</label><br>
+      <input type="radio" id="edoxaban" name="Anticoagulant" value="edoxaban">
+      <label for="edoxaban">edoxaban</label><br>
+      <textarea id="other_rx" name="other_rx" placeholder="ข้อมูลอื่นๆ โปรดระบุ.." style="height:70px"></textarea>
+    </div>
+
+    <br>
+    <br>
+    <!-- <button onclick="myFunction()" type="submit">Submit</button> -->
+    <input type="submit" value="Generate text" onclick="myFunction()" >
+    <br>
+    <br>
+    <textarea id="summary" name="summary" placeholder="สรุป" style="height:500px"></textarea>
+    <br><br>
+    <input type="submit" value="Copy text" onclick="copy()" >
+    <br><br>
+  <!-- </form>  -->
+</div>
 </body>
 
 <script>
