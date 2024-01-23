@@ -197,6 +197,20 @@ input[type=submit] {
     <label for="CHANCE">CHANCE protocol</label><br>
     <input type="radio" id="SAMPRIS" name="Antiplatelet" value="SAMPRIS protocol">
     <label for="SAMPRIS">SAMPRIS protocol</label><br>
+  </div>
+
+  <div>
+    <label for="Anticoagulant"><b>Anticoagulant:</b></label><br>
+    <input type="radio" id="Warfarin" name="Anticoagulant" value="Warfarin">
+    <label for="Warfarin">Warfarin</label><br>
+    <input type="radio" id="dabigatran" name="Anticoagulant" value="dabigatran">
+    <label for="dabigatran">dabigatran</label><br>
+    <input type="radio" id="rivaroxaban" name="Anticoagulant" value="rivaroxaban">
+    <label for="rivaroxaban">rivaroxaban</label><br>
+    <input type="radio" id="apixaban" name="Anticoagulant" value="apixaban">
+    <label for="apixaban">apixaban</label><br>
+    <input type="radio" id="edoxaban" name="Anticoagulant" value="edoxaban">
+    <label for="edoxaban">edoxaban</label><br>
     <textarea id="other_rx" name="other_rx" placeholder="ข้อมูลอื่นๆ โปรดระบุ.." style="height:70px"></textarea>
   </div>
 
@@ -218,7 +232,8 @@ input[type=submit] {
 // console.log('dfdsf')
 function myFunction() {
   var diag_text = document.querySelector('input[name="diagnosis"]:checked'); 
-  var Antiplatelet_text = document.querySelector('input[name="Antiplatelet"]:checked');  
+  var Antiplatelet_text = document.querySelector('input[name="Antiplatelet"]:checked');
+  var Anticoagulant_text = document.querySelector('input[name="Anticoagulant"]:checked');  
   var ward_text = document.querySelector('input[name="ward"]:checked');
   
   const whichDate = new Date(document.getElementById("thisdate").value);
@@ -282,6 +297,9 @@ function myFunction() {
 
   if (document.querySelectorAll('input[name="Antiplatelet"]:checked').length > 0)
     myText = myText + "- " + Antiplatelet_text.value + "\n";
+
+  if (document.querySelectorAll('input[name="Anticoagulant"]:checked').length > 0)
+    myText = myText + "- " + Anticoagulant_text.value + "\n";
 
   if (document.getElementById("other_rx").value !== "")
     myText = myText + 
