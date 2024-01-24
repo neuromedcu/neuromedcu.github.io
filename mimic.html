@@ -190,10 +190,12 @@ function myFunction() {
   const whichDate = new Date(document.getElementById("thisdate").value);
   const whichTime = document.getElementById("thistime").value;
 
+  myText = 'Case STROKE-MIMIC \n=================\n\n'
+
   if (isNaN(whichDate.getDate()))
-    myText = Date(document.getElementById("thisdate").value) + "\n";
+    myText = myText + Date(document.getElementById("thisdate").value) + "\n";
   else
-    myText = whichDate.toDateString() + "\n";
+    myText = myText + whichDate.toDateString() + "\n";
 
 
   if (isNaN(whichTime))
